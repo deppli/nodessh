@@ -13,7 +13,7 @@ function HostCtl($scope,$http){
     }
 
     $scope.refresh=function(){
-        $http.get('/ns/refresh'+new Date().getTime()).
+        $http.get('/ns/refresh?'+new Date().getTime()).
             success(function (respdate){
                 $scope.output+=ansi2html(respdate);
             });
